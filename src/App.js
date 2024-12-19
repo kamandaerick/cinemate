@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <main className='text-5xl text-blue-900'>
+      <main className='text-5xl text-blue-900 font-bold'>
         Hello Erick, Welcome to Tailwind and React
       </main>
     </div>
