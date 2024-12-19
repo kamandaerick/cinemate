@@ -1,11 +1,12 @@
 
 import './App.css';
+import { Outlet} from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <main className='text-5xl text-blue-900 font-bold'>
-        Hello Erick, Welcome to Tailwind and React
+      <main>
+        <Outlet/>
       </main>
     </div>
   );
