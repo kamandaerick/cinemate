@@ -40,9 +40,18 @@ const Header = () => {
           }
         </nav>
         <div className='ml-auto flex items-center gap-6'>
-        <div className='text-white'>
-          <IoIosSearch size={24}/>
-        </div>
+          <form action="" className='flex items-center gap-3'>
+            <input 
+              type="text" 
+              placeholder='Search here ...' 
+              className='px-4 outline-none bg-black'
+            />
+            
+            <button className='text-white'>
+              <IoIosSearch size={24}/>
+            </button>
+          </form>
+
         <div className='cursor-pointer active:scale-50 transition-all'>
           <FaCircleUser size={30}/>
         </div>
