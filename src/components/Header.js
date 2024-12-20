@@ -1,7 +1,8 @@
-import React from 'react'
-import logo from "../assets/logo.png"
+import React from 'react';
+import logo from "../assets/logo.png";
 import { NavLink } from 'react-router-dom';
 import { FaCircleUser } from "react-icons/fa6";
+import { IoIosSearch } from "react-icons/io";
 
 const Header = () => {
   const navigation = [
@@ -38,10 +39,13 @@ const Header = () => {
             })
           }
         </nav>
-        <div className='ml-auto'>
-          <div>
+        <div className='ml-auto flex items-center gap-6'>
+        <div className='text-white'>
+          <IoIosSearch size={24}/>
+        </div>
+        <div className='cursor-pointer active:scale-50 transition-all'>
           <FaCircleUser size={30}/>
-          </div>
+        </div>
         </div>
       </div>
    </header>
