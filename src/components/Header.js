@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from "../assets/logo.png"
-import userIcon from "../assets/user.svg"
 import { NavLink } from 'react-router-dom';
+import { FaCircleUser } from "react-icons/fa6";
 
 const Header = () => {
   const navigation = [
@@ -40,7 +40,7 @@ const Header = () => {
         </nav>
         <div className='ml-auto'>
           <div>
-            <img src={userIcon} alt="" className='w-10 h-10'/>
+          <FaCircleUser size={30}/>
           </div>
         </div>
       </div>
