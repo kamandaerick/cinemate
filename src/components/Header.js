@@ -42,7 +42,7 @@ const Header = () => {
                   <NavLink 
                   key={nav.id} 
                   to={nav.href} 
-                  className={({isActive}) => `px-2 flex items-center gap-1 hover:text-neutral-50 ${isActive && "text-neutral-50"}`}            
+                  className={({isActive}) => `px-2 flex items-center gap-1 hover:text-neutral-50 ${isActive && "text-red-500"}`}            
                   >
                     {nav.icon}
                     {nav.label}
