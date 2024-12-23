@@ -4,21 +4,24 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { FaCircleUser } from "react-icons/fa6";
 import { IoIosSearch } from "react-icons/io";
 
+ // Define an array of navigation items
+ export const navigation = [
+  {
+    label: "Movies",
+    href: "movies",
+    id: 0
+  },
+  {
+    label: "TV Shows",
+    href: "tv",
+    id: 1
+  }
+];
+
 const Header = () => {
   const [searchInput, setSearchInput] = useState('');
   const navigate = useNavigate()
 
-  // Define an array of navigation items
-  const navigation = [
-    {
-      label: "Movies",
-      href: "movies"
-    },
-    {
-      label: "TV Shows",
-      href: "tv"
-    }
-  ];
   //Handle change in the form input
   const handleChange = (e) => {
     setSearchInput(e.target.value);
@@ -50,7 +53,7 @@ const Header = () => {
               return (
                 <div>
                   <NavLink 
-                  key={nav.label} 
+                  key={nav.id} 
                   to={nav.href} 
                   className={({isActive}) => `px-2 hover:text-neutral-50 ${isActive && "text-neutral-50"}`}            
                   >
@@ -68,7 +71,7 @@ const Header = () => {
             <input 
               type="text" 
               placeholder='Search here ...' 
-              className='px-4 outline-none bg-black'
+              className='px-4 outline-none bg-black hidden lg:block'
               value={searchInput}
               onChange={handleChange}
             />
