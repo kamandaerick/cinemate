@@ -3,32 +3,7 @@ import logo from "../assets/logo.png";
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { FaCircleUser } from "react-icons/fa6";
 import { IoIosSearch } from "react-icons/io";
-import { AiFillHome } from "react-icons/ai";
-import { BiSolidMoviePlay } from "react-icons/bi";
-import { ImTv } from "react-icons/im";
-
- // Define an array of navigation items
- export const navigation = [
-  {
-    label: 'Home',
-    href: '/',
-    id: 0,
-    icon: <AiFillHome />
-  },
-  {
-    label: "Movies",
-    href: "movies",
-    id: 1,
-    icon: <BiSolidMoviePlay />
-  },
-  {
-    label: "TV Shows",
-    href: "tv",
-    id: 2,
-    icon: <ImTv />
-  }
-];
-
+import navigation from '../constants/navigation';
 // Define items for mobile navigation
 const Header = () => {
   const [searchInput, setSearchInput] = useState('');
