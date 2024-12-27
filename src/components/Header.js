@@ -21,7 +21,10 @@ const Header = () => {
 
   //Include the search query in the url
   useEffect(() => {
-    navigate(`/search?q=${searchInput}`)
+
+    if (searchInput) {
+      navigate(`/search?q=${searchInput}`)
+    }
   },[searchInput, navigate])
 
   return (
