@@ -6,13 +6,18 @@ import Footer from "./components/Footer"
 import MobileNavigation from './components/MobileNavigation';
 import axios from 'axios';
 import { useEffect } from 'react';
+import { setBannerData } from './store/cinemateSlice';
+import { useDispatch } from 'react-redux';
 
 function App() {
+  const dispatch = useDispatch();
 
   const fetchTrending = async () => {
     try {
       const response = await axios.get('/trending/all/week');
-      console.log(response);
+      dispatch(setBannerData(response.data.results));
+
+      console.log();
     } catch (error) {
       console.log(error);
     }
@@ -20,7 +25,7 @@ function App() {
 
   useEffect(() => {
     fetchTrending();
-  }, [])
+  })
 
   return (
       <main className='pb-14 lg:pb-0'>

@@ -1,7 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { cinemateSlice } from "./cinemateSlice";
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    cinemateData : cinemateSlice
+  },
 });
 
 
