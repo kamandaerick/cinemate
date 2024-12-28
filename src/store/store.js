@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cinemateReducer from "./cinemateSlice";
+import bannerReducer from "./cinemateSlice";
 
 const store = configureStore({
   reducer: {
-    cinemateData : cinemateReducer
+    cinemateData : bannerReducer
   },
 });
 
