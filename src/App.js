@@ -6,25 +6,39 @@ import Footer from "./components/Footer"
 import MobileNavigation from './components/MobileNavigation';
 import axios from 'axios';
 import { useEffect } from 'react';
-import { setBannerData } from './store/cinemateSlice';
+import { setBannerData, setImageURL } from './store/cinemateSlice';
 import { useDispatch } from 'react-redux';
 
 function App() {
   const dispatch = useDispatch();
-
+  // Fetch trending movies and tv shows
   const fetchTrending = async () => {
     try {
       const response = await axios.get('/trending/all/week');
       dispatch(setBannerData(response.data));
 
-      console.log('Response', response.data.results);
+      // console.log('Response', response.data.results);
     } catch (error) {
       console.log(error);
     }
   }
 
+  // fetch configuration from the TMDB
+  const fetchConfiguration = async () => {
+    try {
+      const res = await axios.get('/configuration');
+
+      dispatch(setImageURL(res.data.images.secure_base_url + 'original'))
+      // console.log('Configuration data', res.data.images.secure_base_url + 'original')
+    } catch (error) {
+      console.log('Error', error)
+    }
+  }
+
+
   useEffect(() => {
-    fetchTrending();
+    fetchTrending()
+    fetchConfiguration()
   })
 
   return (
