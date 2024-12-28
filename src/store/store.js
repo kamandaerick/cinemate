@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { cinemateSlice } from "./cinemateSlice";
+import cinemateReducer from "./cinemateSlice";
 
 const store = configureStore({
   reducer: {
-    cinemateData : cinemateSlice
+    cinemateData : cinemateReducer
   },
 });
 

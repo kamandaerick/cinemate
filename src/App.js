@@ -17,7 +17,7 @@ function App() {
       const response = await axios.get('/trending/all/week');
       dispatch(setBannerData(response.data.results));
 
-      console.log();
+      console.log(response);
     } catch (error) {
       console.log(error);
     }
