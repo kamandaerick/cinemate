@@ -15,9 +15,9 @@ function App() {
   const fetchTrending = async () => {
     try {
       const response = await axios.get('/trending/all/week');
-      dispatch(setBannerData(response.data.results));
+      dispatch(setBannerData(response.data));
 
-      console.log(response);
+      console.log('Response', response.data.results);
     } catch (error) {
       console.log(error);
     }
