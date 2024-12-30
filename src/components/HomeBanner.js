@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
@@ -9,6 +9,8 @@ function HomeBanner() {
   const imgURL = useSelector(state => state.cinemateData.imageURL);
   const [currentImage, setCurrentImage] = useState(0);
   // console.log("My Data is", bannerData)
+
+  // Handle Previous and next buttons' logic
   const handleNext = () => {
     if(currentImage < bannerData.length - 1) {
       setCurrentImage(prev => prev + 1)
@@ -20,6 +22,18 @@ function HomeBanner() {
       setCurrentImage(prev => prev - 1)
     }
   }
+
+  // Create carousel of the banner images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (currentImage < bannerData.length - 1) {
+        handleNext();
+      } else {
+        setCurrentImage(0)
+      }
+    }, 7000)
+    return () => clearInterval(interval)
+  })
 
   if (!bannerData) return <div>Loading...</div>;
   return (
@@ -36,7 +50,7 @@ function HomeBanner() {
                   <img
                     src = {imgURL + data.backdrop_path}
                     alt = "Images"
-                    className='w-full'
+                    className='w-full h-fit'
                   />
                 </div>
                  {/* Buttons for Next and Previous  */}
