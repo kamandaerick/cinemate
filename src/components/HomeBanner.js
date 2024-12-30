@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
@@ -6,8 +6,20 @@ import { GrPrevious } from "react-icons/gr";
 function HomeBanner() {
 
   const bannerData = useSelector(state => state.cinemateData.bannerData.results);
-  const imgURL = useSelector(state => state.cinemateData.imageURL)
+  const imgURL = useSelector(state => state.cinemateData.imageURL);
+  const [currentImage, setCurrentImage] = useState(0);
   // console.log("My Data is", bannerData)
+  const handleNext = () => {
+    if(currentImage < bannerData.length - 1) {
+      setCurrentImage(prev => prev + 1)
+    }
+  }
+
+  const handlePrevious = () => {
+    if(currentImage > 0) {
+      setCurrentImage(prev => prev - 1)
+    }
+  }
 
   if (!bannerData) return <div>Loading...</div>;
   return (
@@ -15,9 +27,10 @@ function HomeBanner() {
     <div className='flex'>
         {
           bannerData.map((data, index) => {
-            console.log(data)
+            // console.log(data)
             return (
-              <div className='min-w-full min-h-[450px] lg:min-h-[90vh] relative'>
+              <div className='min-w-full min-h-[450px] lg:min-h-[90vh] relative group transition-all' 
+              style={{transform: `translateX(-${currentImage * 100}%)`}}>
                 {/* Display Banner Images */}
                 <div>
                   <img
@@ -27,11 +40,11 @@ function HomeBanner() {
                   />
                 </div>
                  {/* Buttons for Next and Previous  */}
-                 <div className='absolute top-0 w-full h-full flex items-center justify-between px-4'>
-                  <button className='bg-white p-1 rounded-full z-10 text-black'>
+                 <div className='absolute hidden top-0 w-full h-full items-center justify-between px-4 group-hover:lg:flex'>
+                  <button className='bg-white p-1 rounded-full z-10 text-black' onClick={handlePrevious}>
                     <GrPrevious  size={24}/>
                   </button>
-                  <button className='bg-white p-1 rounded-full z-10 text-black'>
+                  <button className='bg-white p-1 rounded-full z-10 text-black' onClick={handleNext}>
                     <GrNext size={24} />
                   </button>
                 </div>
