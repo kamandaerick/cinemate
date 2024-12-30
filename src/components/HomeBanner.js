@@ -1,5 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { GrNext } from "react-icons/gr";
+import { GrPrevious } from "react-icons/gr";
 
 function HomeBanner() {
 
@@ -24,6 +26,15 @@ function HomeBanner() {
                     className='w-full'
                   />
                 </div>
+                 {/* Buttons for Next and Previous  */}
+                 <div className='absolute top-0 w-full h-full flex items-center justify-between px-4'>
+                  <button className='bg-white p-1 rounded-full z-10 text-black'>
+                    <GrPrevious  size={24}/>
+                  </button>
+                  <button className='bg-white p-1 rounded-full z-10 text-black'>
+                    <GrNext size={24} />
+                  </button>
+                </div>
                 {/* Apply Gradient to the banner images */}
                 <div className='absolute w-full h-full top-0 bg-gradient-to-t from-neutral-900 to-transparent'>
                 </div>
@@ -37,6 +48,7 @@ function HomeBanner() {
                   </p>
                   <div className='flex items-center gap-4'>
                     <p>Rating : {Number(data.vote_average).toFixed(1)}</p>
+                    <span>|</span>
                     <p>Release Date : {data?.release_date || data?.first_air_date}</p>
                   </div>
                 </div>
