@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import moment from 'moment'
 
 function Card({data, trending, index}) {
 
@@ -17,7 +18,14 @@ function Card({data, trending, index}) {
       }
      </div>
      <div className='absolute bottom-0 h-16 backdrop-blur-3xl w-full bg-black/60 p-2'>
-      <h2 className='text-ellipsis line-clamp-1 text-lg font-semibold'>{data?.original_title || data?.name}</h2>
+      <h2 className='text-ellipsis line-clamp-1 text-lg font-semibold'>
+        {data?.original_title || data?.name}
+      </h2>
+      <div>
+        <p>
+          {moment(data?.release_date || data?.first_air_date).format('ll')}
+        </p>
+      </div>
      </div>
     </div>
   )
