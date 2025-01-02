@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import moment from 'moment'
+import { MdOutlineStarPurple500 } from "react-icons/md";
 
 function Card({data, trending, index}) {
 
@@ -21,10 +22,17 @@ function Card({data, trending, index}) {
       <h2 className='text-ellipsis line-clamp-1 text-lg font-semibold'>
         {data?.original_title || data?.name}
       </h2>
-      <div className='text-sm'>
+      <div className='text-sm flex justify-between'>
         <p>
           {moment(data?.release_date || data?.first_air_date).format('ll')}
         </p>
+        <div className='flex justify-end items-center'>
+          <MdOutlineStarPurple500 size={15}/>
+          <p>
+          {Number(data.vote_average).toFixed(1)}
+          </p>
+        </div>
+
       </div>
      </div>
     </div>
