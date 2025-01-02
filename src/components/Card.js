@@ -21,7 +21,7 @@ function Card({data, trending, index}) {
       <h2 className='text-ellipsis line-clamp-1 text-lg font-semibold'>
         {data?.original_title || data?.name}
       </h2>
-      <div>
+      <div className='text-sm'>
         <p>
           {moment(data?.release_date || data?.first_air_date).format('ll')}
         </p>

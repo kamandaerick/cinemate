@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
+import moment from 'moment'
 
 function HomeBanner() {
 
@@ -76,7 +77,7 @@ function HomeBanner() {
                   <div className='flex items-center gap-4'>
                     <p>Rating : {Number(data.vote_average).toFixed(1)}</p>
                     <span>|</span>
-                    <p>Release Date : {data?.release_date || data?.first_air_date}</p>
+                    <p>Release Date : {moment(data?.release_date || data?.first_air_date).format('ll')}</p>
                   </div>
                 </div>
               </div>
