@@ -66,7 +66,7 @@ function HomeBanner() {
                 <div className='absolute w-full h-full top-0 bg-gradient-to-t from-neutral-900 to-transparent'>
                 </div>
                 {/* Movie/tv show details */}
-                <div className='container mx-auto absolute bottom-0 max-w-md px-4 mx-4'>
+                <div className='container mx-auto absolute bottom-0 max-w-md px-4'>
                   <h2 className='font-bold text-3xl'>
                     {data?.name || data?.original_title}
                   </h2>
