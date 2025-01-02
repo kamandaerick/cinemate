@@ -14,7 +14,7 @@ const Home = () => {
 
       <div className='container mx-auto my-10 px-3'>
         <h2 className='text-2xl text-white font-bold mb-2'>Trending Now</h2>
-        <div className= "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className= "grid gap-3 grid-flow-col">
           {
           allTrending.map((data, index) => {
             return (
