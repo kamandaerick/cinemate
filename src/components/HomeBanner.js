@@ -44,7 +44,7 @@ function HomeBanner() {
           bannerData.map((data, index) => {
             // console.log(data)
             return (
-              <div className='min-w-full min-h-[450px] lg:min-h-[90vh] relative group transition-all' 
+              <div key={data.id+'homeBanner'+index} className='min-w-full min-h-[450px] lg:min-h-[90vh] relative group transition-all' 
               style={{transform: `translateX(-${currentImage * 100}%)`}}>
                 {/* Display Banner Images */}
                 <div>
