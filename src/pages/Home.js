@@ -22,6 +22,8 @@ const Home = () => {
                 <Card
                   key={data.id}
                   data={data}
+                  index={index + 1}
+                  trending={true}
                 />
               </div>
             )
