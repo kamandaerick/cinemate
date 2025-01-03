@@ -3,7 +3,7 @@ import Card from './Card'
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
 
-const HorizontalScrollCard = ({data=[], heading}) => {
+const HorizontalScrollCard = ({data=[], heading, trending}) => {
   const containerRef = useRef()
   // Handle next button
   const handleNext = () => {
@@ -26,14 +26,14 @@ const HorizontalScrollCard = ({data=[], heading}) => {
                     <Card
                       data={data}
                       index={index + 1}
-                      trending={true}
+                      trending={trending}
                     />
                   </div>
                 )
               })
             }
             </div>
-              <div className='absolute flex top-0 justify-between w-full h-full items-center z-100'>
+              <div className='absolute hidden lg:flex top-0 justify-between w-full h-full items-center z-100'>
               <button onClick={handlePrevious} className='bg-white p-1 rounded-full z-10 text-black'>
                 <GrPrevious size={24}/>
               </button>
