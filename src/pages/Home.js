@@ -49,7 +49,7 @@ const Home = () => {
     try {
       const res = await axios.get('/movie/top_rated');
       setTopRatedMovies(res.data.results)
-      console.log("Top Rated Movies: ", res)
+      // console.log("Top Rated Movies: ", res)
     } catch (error) {
       console.log("Error: ", error)
     }

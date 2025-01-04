@@ -8,7 +8,7 @@ const GITHUB_PROFILE = 'https://github.com/kamandaerick'
 
 const Footer = () => {
   return (
-   <footer className='hidden lg:text-center bg-black h-max top-4 pt-4'>
+   <footer className="hidden lg:block text-center bg-black h-max top-4 pt-4">
     <div className=''>
       <p className='text-white text-lg pb-3'>Designed By Erick Kamanda</p>
       <div className='flex items-center justify-center gap-10'>

@@ -1,7 +1,7 @@
 import { AiFillHome } from "react-icons/ai";
 import { BiSolidMoviePlay } from "react-icons/bi";
 import { ImTv } from "react-icons/im";
-import { IoIosSearch } from "react-icons/io";
+
  // Define an array of navigation items
 const navigation = [
   {
@@ -21,12 +21,6 @@ const navigation = [
     href: "tv",
     id: 2,
     icon: <ImTv />
-  },
-  {
-    label: "Search",
-    href: "search",
-    id: 3,
-    icon: <IoIosSearch  />
   }
 ];
 
