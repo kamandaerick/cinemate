@@ -8,7 +8,7 @@ function Card({data, trending, index}) {
 
   const imgURL = useSelector(state => state.cinemateData.imageURL);
   return ( 
-     <div className='max-w-[250px] min-w-[250px] w-full rounded h-full overflow-hidden relative'>
+     <div className='max-w-[250px] min-w-[250px] w-full rounded h-full overflow-hidden relative hover:scale-105 transition-all'>
       <img src={imgURL+data?.poster_path} alt="Movie Images" className='w-full h-auto' />
      <div className='absolute top-4'>
         {

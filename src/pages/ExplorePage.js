@@ -49,7 +49,7 @@ const ExplorePage = () => {
     <div>
       <div className="container mx-auto">
         <h2 className="text-2xl font-semibold capitalize my-3">Explore {params.explore}</h2>
-        <div className='flex flex-wrap '>
+        <div className='flex flex-wrap gap-1'>
           {data.map((exploreData, index) => (
             <Card data={exploreData} key={`${exploreData.id}-${params.explore}-${index}`} />
           ))}
