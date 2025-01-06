@@ -12,7 +12,7 @@ const navigation = [
   },
   {
     label: "Movies",
-    href: "movies",
+    href: "movie",
     id: 1,
     icon: <BiSolidMoviePlay />
   },
