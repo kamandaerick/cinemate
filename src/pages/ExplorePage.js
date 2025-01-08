@@ -1,13 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Card from '../components/Card';
 
 const ExplorePage = () => {
   const params = useParams();
   const [pageNo, setPageNo] = useState(1);
   const [data, setData] = useState([]);
-  const [totalPageNos, setTotalPageNos] = useState(1);
+  // const [totalPageNos, setTotalPageNos] = useState(1);
 
   // Reset data when params.explore changes
   useEffect(() => {
@@ -22,7 +22,7 @@ const ExplorePage = () => {
         console.log('Data', response);
 
         setData(prev => [...prev, ...response.data.results]); // Append new data
-        setTotalPageNos(response.data.total_pages);
+        // setTotalPageNos(response.data.total_pages);
       } catch (error) {
         console.log('Error', error);
       }
@@ -43,17 +43,19 @@ const ExplorePage = () => {
     return () => {
       window.removeEventListener('scroll', handleInfinitescroll);
     };
+    
   }, []);
 
+  
   return (
     <div>
       <div className="container mx-auto">
         <h2 className="text-2xl font-semibold capitalize my-3">Explore {params.explore}</h2>
-        <div className='flex flex-wrap gap-1'>
+        <Link className='flex flex-wrap gap-1'>
           {data.map((exploreData, index) => (
             <Card data={exploreData} key={`${exploreData.id}-${params.explore}-${index}`} />
           ))}
-        </div>
+        </Link>
       </div>
     </div>
   );
