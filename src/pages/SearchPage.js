@@ -19,7 +19,7 @@ const SearchPage = () => {
       const query = `?query=${finalQuery}`
       const response = await axios.get(url + query);
       setData(response.data.results)
-      console.log(response.data.results)
+      
     } catch (error) {
       console.log('Error: ', error)
     }
