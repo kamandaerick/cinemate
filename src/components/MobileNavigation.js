@@ -1,19 +1,14 @@
 import React from 'react';
 import navigation from '../constants/navigation';
 import { NavLink } from 'react-router-dom';
-import { IoIosSearch } from "react-icons/io";
+// import { IoIosSearch } from "react-icons/io";
 
-const mobileNav = [...navigation, {
-  label: "Search",
-  href: "search",
-  id: 3,
-  icon: <IoIosSearch />
-}];
+const mobileNav = navigation;
 
 const MobileNavigation = () => {
   return (
-    <section className='lg:hidden h-16 fixed bottom-0'>
-      <div className='flex items-center justify-evenly h-full'>
+    <section className='lg:hidden h-16 fixed bottom-0 w-full'>
+      <div className='flex items-center justify-between h-full w-full'>
         {mobileNav.map((navItem, index) => {
           return (
             <NavLink key={navItem.id+'mobilenavigation'} 
