@@ -33,7 +33,7 @@ const SearchPage = () => {
     <div className='container mx-auto'>
       <h2 className="text-2xl font-semibold capitalize my-3">Search Results</h2>
       <div>
-      <Link className='flex flex-wrap gap-1'>
+      <Link className='flex flex-wrap gap-1 items-center justify-center'>
           {data.map((data, index) => (
             <Card data={data} key={`${data.id}-${index}`} />
           ))}
