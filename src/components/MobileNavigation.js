@@ -7,8 +7,8 @@ const mobileNav = navigation;
 
 const MobileNavigation = () => {
   return (
-    <section className='lg:hidden h-16 fixed bottom-0 w-full'>
-      <div className='flex items-center justify-between h-full w-full'>
+    <section className='lg:hidden h-18 fixed bottom-0 w-full pb-1 bg-black'>
+      <div className='flex items-center justify-evenly h-full w-full'>
         {mobileNav.map((navItem, index) => {
           return (
             <NavLink key={navItem.id+'mobilenavigation'} 

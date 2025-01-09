@@ -38,7 +38,7 @@ function HomeBanner() {
 
   if (!bannerData) return <div>Loading...</div>;
   return (
-    <section className='w-full h-full'>
+    <section className='w-full h-full overflow-hidden'>
     <div className='flex'>
         {
           bannerData.map((data, index) => {

@@ -31,9 +31,10 @@ const Header = () => {
    <header className='fixed top-0 w-full h-16 bg-black bg-opacity-70 z-40'>
 
       {/* Logo Section */}
-      <div className='container mx-auto px-3 flex items-center h-full'>
+      <div className='container mx-auto px-3 flex items-center h-full w-full'>
         <Link to={'/'}>
-          <img src={logo} alt="Cinemate Logo" width={120}/>
+          {/* <img src={logo} alt="Cinemate Logo" width={120}/> */}
+          <img src={logo} alt="Cinemate Logo" className="w-[80px] sm:w-[100px] lg:w-[120px]" />
         </Link>
       
         {/* Navigation  Links */}
@@ -57,12 +58,12 @@ const Header = () => {
         </nav>
 
         {/* Search bar and User Icon */}
-        <div className='ml-auto flex items-center gap-6'>
+        <div className='ml-auto flex items-center gap-3 flex-wrap'>
           <form  className='flex items-center gap-3' onSubmit={handleSubmit}>
             <input 
               type="text" 
               placeholder='Search here ...' 
-              className='px-4 outline-none bg-black lg:block'
+              className='px-4 outline-none bg-black w-full max-w-[150px] sm:max-w-[200px] lg:max-w-[300px]'
               value={searchInput}
               onChange={handleChange}
             />

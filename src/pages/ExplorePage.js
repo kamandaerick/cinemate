@@ -19,7 +19,7 @@ const ExplorePage = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`/discover/${params.explore}`, { params: { page: pageNo } });
-        console.log('Data', response);
+        // console.log('Data', response);
 
         setData(prev => [...prev, ...response.data.results]); // Append new data
         // setTotalPageNos(response.data.total_pages);
