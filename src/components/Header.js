@@ -62,7 +62,7 @@ const Header = () => {
             <input 
               type="text" 
               placeholder='Search here ...' 
-              className='px-4 outline-none bg-black hidden lg:block'
+              className='px-4 outline-none bg-black lg:block'
               value={searchInput}
               onChange={handleChange}
             />
