@@ -76,7 +76,7 @@ To run the project locally, follow these steps:
 ---
 
 ## Deployment
-The project is deployed on Vercel. Visit the live site here: [Live Application URL](#).
+The project is deployed on Vercel. Visit the live site here: [Live Application URL](https://cinemate-lac.vercel.app/).
 
 ---
 
